@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teriki - Elegant Beauty & Makeup</title>
+    <meta name="description"
+        content="Discover modern, elegant, and inclusive makeup products and beauty accessories for women of all ages at Teriki.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">TERIKI</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html?category=lips">Lips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html?category=eyes">Eyes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html?category=face">Face</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i
+                            class="bi bi-search"></i></a>
+                    <a href="#" class="text-dark me-3"><i class="bi bi-person"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="bi bi-bag"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- The background image needs to be dynamically set based on generated name. We will update this via JS or manual edit later. -->
+        <img src="img/teriki_hero_banner_1772288633632.png" alt="Teriki Beauty Products" class="hero-bg-img">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Discover Your Timeless Beauty</h1>
+                <p class="mb-4">Elegant, inclusive, and modern makeup designed to empower women of all ages. Find your
+                    perfect shade today.</p>
+                <a href="shop.html" class="btn btn-primary-custom">Shop the Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="row text-center mt-5" id="category-container">
+                <!-- Categories will be injected here by app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <h2 class="section-title mb-0">Featured Arrivals</h2>
+                <a href="shop.html" class="text-dark fw-medium">View All <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="row g-4" id="featured-products">
+                <!-- Products will be injected here by app.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pt-0 pb-5 px-4">
+                    <h5 class="modal-title mb-4" id="searchModalLabel">What are you looking for?</h5>
+                    <form action="shop.html" method="GET" class="d-flex w-100">
+                        <input type="text" name="search" class="form-control rounded-pill border-dark me-2"
+                            placeholder="Search products..." autofocus required>
+                        <button type="submit" class="btn btn-primary-custom rounded-pill px-4">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">TERIKI</div>
+                    <p class="text-muted pe-4">Empowering beauty for every generation. Formulated with care, designed
+                        with elegance.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="mb-3">Shop</h5>
+                    <a href="shop.html?category=lips" class="footer-link">Lips</a>
+                    <a href="shop.html?category=eyes" class="footer-link">Eyes</a>
+                    <a href="shop.html?category=face" class="footer-link">Face</a>
+                    <a href="shop.html?category=nails" class="footer-link">Nails</a>
+                    <a href="shop.html?category=tools" class="footer-link">Tools</a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="mb-3">About</h5>
+                    <a href="#" class="footer-link">Our Story</a>
+                    <a href="#" class="footer-link">Sustainability</a>
+                    <a href="#" class="footer-link">Ingredients</a>
+                    <a href="#" class="footer-link">Careers</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3">Join the Teriki Family</h5>
+                    <p class="text-muted mb-3">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="d-flex" onsubmit="event.preventDefault();">
+                        <input type="email" class="form-control rounded-pill me-2" placeholder="Enter your email"
+                            required>
+                        <button type="submit" class="btn btn-primary-custom">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col-md-6 text-center text-md-start text-muted">
+                    &copy; 2026 Teriki Beauty. All rights reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="#" class="text-muted me-3 text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

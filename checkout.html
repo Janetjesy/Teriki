@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Teriki Beauty</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+
+<body class="bg-light">
+
+    <!-- Simple Navigation for Checkout -->
+    <nav class="navbar navbar-expand-lg border-bottom bg-white py-3">
+        <div class="container justify-content-center">
+            <a class="navbar-brand m-0 fs-3" href="index.html">TERIKI</a>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="section-padding py-5">
+        <div class="container">
+            <div class="row gx-5">
+
+                <!-- Forms -->
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+                        <h3 class="mb-4 font-heading">Secure Checkout</h3>
+
+                        <form id="checkout-form">
+                            <!-- Contact Info -->
+                            <h5 class="mb-3">Contact Information</h5>
+                            <div class="mb-4">
+                                <input type="email" class="form-control p-3" placeholder="Email Address" required>
+                            </div>
+
+                            <!-- Shipping Info -->
+                            <h5 class="mb-3">Shipping Address</h5>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control p-3" placeholder="First Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control p-3" placeholder="Last Name" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control p-3" placeholder="Address" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control p-3"
+                                        placeholder="Apartment, suite, etc. (optional)">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control p-3" placeholder="City" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-select p-3" required>
+                                        <option value="">State</option>
+                                        <option value="CA">California</option>
+                                        <option value="NY">New York</option>
+                                        <option value="TX">Texas</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control p-3" placeholder="ZIP Code" required>
+                                </div>
+                            </div>
+
+                            <!-- Payment Info -->
+                            <h5 class="mb-3 mt-5">Payment</h5>
+                            <div class="p-3 border rounded mb-4 bg-light">
+                                <p class="small text-muted mb-0"><i class="bi bi-info-circle"></i> This is a demo store.
+                                    No actual payment will be processed.</p>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <input type="text" class="form-control p-3" placeholder="Card Number"
+                                        value="4242 4242 4242 4242" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control p-3" placeholder="Expiration (MM/YY)"
+                                        value="12/28" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control p-3" placeholder="Security Code" value="123"
+                                        required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control p-3" placeholder="Name on Card"
+                                        value="Jane Doe" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary-custom w-100 py-3 fs-5 mt-5">Place
+                                Order</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <div class="col-lg-5">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm sticky-top" style="top: 20px;">
+                        <h4 class="mb-4">Order Summary</h4>
+                        <div id="checkout-items" class="mb-4">
+                            <!-- Handled by JS -->
+                        </div>
+
+                        <div class="border-top pt-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Subtotal</span>
+                                <span id="checkout-subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Shipping</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Taxes</span>
+                                <span id="checkout-tax">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="border-top pt-3 mt-3 d-flex justify-content-between align-items-center">
+                            <span class="fs-4 fw-bold">Total</span>
+                            <span class="fs-4 fw-bold" id="checkout-total">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">TERIKI</div>
+                    <p class="text-muted pe-4">Empowering beauty for every generation. Formulated with care, designed
+                        with elegance.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="mb-3">Shop</h5>
+                    <a href="shop.html?category=lips" class="footer-link">Lips</a>
+                    <a href="shop.html?category=eyes" class="footer-link">Eyes</a>
+                    <a href="shop.html?category=face" class="footer-link">Face</a>
+                    <a href="shop.html?category=nails" class="footer-link">Nails</a>
+                    <a href="shop.html?category=tools" class="footer-link">Tools</a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="mb-3">About</h5>
+                    <a href="#" class="footer-link">Our Story</a>
+                    <a href="#" class="footer-link">Sustainability</a>
+                    <a href="#" class="footer-link">Ingredients</a>
+                    <a href="#" class="footer-link">Careers</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3">Join the Teriki Family</h5>
+                    <p class="text-muted mb-3">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="d-flex" onsubmit="event.preventDefault();">
+                        <input type="email" class="form-control rounded-pill me-2" placeholder="Enter your email"
+                            required>
+                        <button type="submit" class="btn btn-primary-custom">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col-md-6 text-center text-md-start text-muted">
+                    &copy; 2026 Teriki Beauty. All rights reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="#" class="text-muted me-3 text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4 text-center rounded-4 border-0">
+                <div class="modal-body">
+                    <i class="bi bi-check-circle text-success" style="font-size: 5rem;"></i>
+                    <h2 class="mt-3 mb-3 font-heading">Thank You!</h2>
+                    <p class="text-muted mb-4">Your order has been placed successfully. You will receive an email
+                        confirmation shortly.</p>
+                    <button type="button" class="btn btn-primary-custom px-5"
+                        onclick="window.location.href='index.html'">Return to Store</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (state.cart.length === 0) {
+                window.location.href = 'cart.html';
+                return;
+            }
+
+            let subtotal = 0;
+            let html = '';
+
+            state.cart.forEach(cartItem => {
+                const product = products.find(p => p.id === cartItem.product_id);
+                if (!product) return;
+
+                const itemTotal = product.price * cartItem.quantity;
+                subtotal += itemTotal;
+
+                html += `
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="position-relative">
+                            <img src="${product.image_url}" alt="${product.name}" class="rounded border" style="width: 60px; height: 60px; object-fit: cover;">
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                                ${cartItem.quantity}
+                            </span>
+                        </div>
+                        <div class="ms-3 flex-grow-1">
+                            <span class="d-block text-dark small fw-medium">${product.name}</span>
+                        </div>
+                        <div class="ms-2 text-dark small fw-medium">
+                            ${formatPrice(itemTotal)}
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('checkout-items').innerHTML = html;
+
+            const tax = subtotal * 0.08; // 8% tax demo
+            const total = subtotal + tax;
+
+            document.getElementById('checkout-subtotal').innerHTML = formatPrice(subtotal);
+            document.getElementById('checkout-tax').innerHTML = formatPrice(tax);
+            document.getElementById('checkout-total').innerHTML = formatPrice(total);
+
+            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Clear cart
+                localStorage.removeItem('teriki_cart');
+                state.cart = [];
+                // Show modal
+                const modal = new bootstrap.Modal(document.getElementById('successModal'));
+                modal.show();
+            });
+        });
+    </script>
+</body>
+
+</html>
