@@ -59,6 +59,24 @@ const products = [
         featured: true
     },
     {
+        id: 'prod_7',
+        category_id: 'nails',
+        name: 'Ruby Red Gel Polish',
+        description: 'A classic, highly pigmented ruby red gel nail polish for a bold and sophisticated look.',
+        price: 18.00,
+        image_url: 'img/product_nail_polish_red_1773337488662.png',
+        featured: true
+    },
+    {
+        id: 'prod_8',
+        category_id: 'nails',
+        name: 'Midnight Noir Gel Polish',
+        description: 'A sleek, deep midnight black gel nail polish that exudes modern elegance and mystery.',
+        price: 18.00,
+        image_url: 'img/product_nail_polish_black_1773337687427.png',
+        featured: false
+    },
+    {
         id: 'prod_6',
         category_id: 'tools',
         name: 'Pro Artistry Brush Set',
@@ -66,6 +84,24 @@ const products = [
         price: 85.00,
         image_url: 'img/product_makeup_brushes_1772290013332.png',
         featured: false
+    },
+    {
+        id: 'prod_9',
+        category_id: 'tools',
+        name: 'Crystal Glass Nail File',
+        description: 'An elegant premium crystal glass nail file with a frosted finish. Gentle on natural nails, preventing splitting and peeling.',
+        price: 15.00,
+        image_url: 'img/product_nail_file_1773337790487.png',
+        featured: false
+    },
+    {
+        id: 'prod_10',
+        category_id: 'tools',
+        name: 'Pro UV/LED Nail Lamp',
+        description: 'A modern, sleek, minimalist dome-shaped professional UV LED nail lamp for flawless at-home gel manicures.',
+        price: 65.00,
+        image_url: 'img/product_nail_lamp_1773338081677.png',
+        featured: true
     }
 ];
 
