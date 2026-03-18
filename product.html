@@ -20,7 +20,11 @@
     <!-- Navigation (Copied from index.html for simplicity) -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">TERIKI</a>
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/favicon.png" alt="Teriki" width="28" height="28"
+                    class="me-2 rounded-circle border border-1">
+                TERIKI
+            </a>
             <div class="d-flex align-items-center ms-auto">
                 <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i
                         class="bi bi-search"></i></a>
@@ -60,8 +64,9 @@
                     <div class="pt-md-4">
                         <div class="text-muted text-uppercase small letter-spacing-1 mb-2" id="detail-category">Category
                         </div>
-                        <h1 class="display-5 fw-bold mb-3" id="detail-title">Product Name</h1>
-                        <h3 class="fw-normal mb-4" id="detail-price">$0.00</h3>
+                        <h1 class="display-5 fw-bold mb-2" id="detail-title">Product Name</h1>
+                        <div id="detail-stars" class="mb-3"></div>
+                        <h3 class="fw-normal mb-4" id="detail-price">Ksh 0.00</h3>
 
                         <p class="lead text-muted mb-5" id="detail-description">Description goes here.</p>
 
@@ -85,7 +90,8 @@
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     data-bs-parent="#productAccordion">
-                                    <div class="accordion-body text-muted">Formulated without parabens, phthalates, or
+                                    <div class="accordion-body text-muted" id="detail-ingredients">Formulated without
+                                        parabens, phthalates, or
                                         sulfates. 100% cruelty-free.</div>
                                 </div>
                             </div>
@@ -93,17 +99,26 @@
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseTwo">
-                                        How to Use
+                                        Details & Wear
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse"
                                     data-bs-parent="#productAccordion">
-                                    <div class="accordion-body text-muted">Apply gently for a flawless elegant finish.
+                                    <div class="accordion-body text-muted" id="detail-wear">Apply gently for a flawless
+                                        elegant finish.
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Similar Products Section -->
+            <div class="mt-5 pt-5 border-top">
+                <h3 class="font-heading mb-4 text-center">You May Also Like</h3>
+                <div class="row g-4" id="similar-products-container">
+                    <!-- Javascript will inject similar products here -->
                 </div>
             </div>
         </div>
@@ -153,9 +168,10 @@
                 <div class="col-lg-2 col-md-3 col-6">
                     <h5 class="mb-3">About</h5>
                     <a href="about.html" class="footer-link">Our Story</a>
-                    <a href="#" class="footer-link">Sustainability</a>
-                    <a href="#" class="footer-link">Ingredients</a>
-                    <a href="#" class="footer-link">Careers</a>
+                    <a href="sustainability.html" class="footer-link">Sustainability</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms & Conditions</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">Join the Teriki Family</h5>
@@ -198,11 +214,32 @@
             document.getElementById('breadcrumb-product-name').textContent = product.name;
             document.getElementById('detail-image').src = product.image_url;
             document.getElementById('detail-title').textContent = product.name;
+            document.getElementById('detail-stars').innerHTML = `
+                <div class="text-warning fs-6 d-flex align-items-center">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <span class="text-muted ms-2 fs-6">(${product.reviews} reviews)</span>
+                </div>
+            `;
             document.getElementById('detail-price').textContent = formatPrice(product.price);
             document.getElementById('detail-description').textContent = product.description;
 
+            // Populate ingredients and details
+            document.getElementById('detail-ingredients').textContent = product.ingredients || 'Information unavailable.';
+            document.getElementById('detail-wear').textContent = product.details || 'Information unavailable.';
+
             const categoryObj = categories.find(c => c.id === product.category_id);
             if (categoryObj) document.getElementById('detail-category').textContent = categoryObj.name;
+
+            // Render Similar Products
+            const similarContainer = document.getElementById('similar-products-container');
+            if (similarContainer) {
+                const similarProducts = products.filter(p => p.category_id === product.category_id && p.id !== product.id).slice(0, 4);
+                if (similarProducts.length > 0) {
+                    similarContainer.innerHTML = similarProducts.map(renderProductCard).join('');
+                } else {
+                    similarContainer.innerHTML = '<p class="text-center text-muted">No similar products found at this time.</p>';
+                }
+            }
 
             // Qty Logic
             const qtyInput = document.getElementById('qty-input');

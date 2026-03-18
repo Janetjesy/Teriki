@@ -18,16 +18,17 @@ const products = [
         category_id: 'lips',
         name: 'Velvet Rose Lip Gloss',
         description: 'A luxurious, non-sticky lip gloss that provides a high-shine finish with a subtle rose tint. Enriched with vitamin E for all-day hydration.',
-        price: 24.00,
+        price: 3000.00,
         image_url: 'img/product_lipstick_rose_1772288678759.png',
-        featured: true
+        featured: true,
+        top_selling: true
     },
     {
         id: 'prod_2',
         category_id: 'eyes',
         name: 'Soft Neutrals Palette',
         description: 'An elegant 12-pan eyeshadow palette featuring matte and subtle shimmer shades perfect for everyday wear and gentle transitions.',
-        price: 48.00,
+        price: 5500.00,
         image_url: 'img/product_eyeshadow_palette_1772289307951.png',
         featured: true
     },
@@ -36,16 +37,17 @@ const products = [
         category_id: 'face',
         name: 'Luminous Silk Foundation',
         description: 'A lightweight, buildable foundation that delivers a flawless, natural glow. Available in inclusive shades for every undertone.',
-        price: 52.00,
+        price: 6500.00,
         image_url: 'img/product_liquid_foundation_1772289575810.png',
-        featured: true
+        featured: true,
+        top_selling: true
     },
     {
         id: 'prod_4',
         category_id: 'lips',
         name: 'Classic Matte Lipstick - Ruby',
         description: 'A creamy, comfortable matte lipstick in a universally flattering classic red shade.',
-        price: 28.00,
+        price: 3500.00,
         image_url: 'img/product_lipstick_rose_1772288678759.png',
         featured: false
     },
@@ -54,16 +56,17 @@ const products = [
         category_id: 'nails',
         name: 'Blush Gel Polish',
         description: 'A chip-resistant, long-wear gel nail polish in an elegant subtle blush pink. Delivers a high-gloss finish.',
-        price: 18.00,
+        price: 2200.00,
         image_url: 'img/product_nail_polish_1772289865495.png',
-        featured: true
+        featured: true,
+        top_selling: true
     },
     {
         id: 'prod_7',
         category_id: 'nails',
         name: 'Ruby Red Gel Polish',
         description: 'A classic, highly pigmented ruby red gel nail polish for a bold and sophisticated look.',
-        price: 18.00,
+        price: 2200.00,
         image_url: 'img/product_nail_polish_red_1773337488662.png',
         featured: true
     },
@@ -72,7 +75,7 @@ const products = [
         category_id: 'nails',
         name: 'Midnight Noir Gel Polish',
         description: 'A sleek, deep midnight black gel nail polish that exudes modern elegance and mystery.',
-        price: 18.00,
+        price: 2200.00,
         image_url: 'img/product_nail_polish_black_1773337687427.png',
         featured: false
     },
@@ -81,16 +84,17 @@ const products = [
         category_id: 'tools',
         name: 'Pro Artistry Brush Set',
         description: 'A complete set of 8 ultra-soft, vegan makeup brushes with rose gold detailing. Perfect for flawless application.',
-        price: 85.00,
+        price: 9500.00,
         image_url: 'img/product_makeup_brushes_1772290013332.png',
-        featured: false
+        featured: false,
+        top_selling: true
     },
     {
         id: 'prod_9',
         category_id: 'tools',
         name: 'Crystal Glass Nail File',
         description: 'An elegant premium crystal glass nail file with a frosted finish. Gentle on natural nails, preventing splitting and peeling.',
-        price: 15.00,
+        price: 1800.00,
         image_url: 'img/product_nail_file_1773337790487.png',
         featured: false
     },
@@ -99,15 +103,67 @@ const products = [
         category_id: 'tools',
         name: 'Pro UV/LED Nail Lamp',
         description: 'A modern, sleek, minimalist dome-shaped professional UV LED nail lamp for flawless at-home gel manicures.',
-        price: 65.00,
+        price: 7500.00,
         image_url: 'img/product_nail_lamp_1773338081677.png',
         featured: true
-    }
+    },
+    { id: 'prod_11', category_id: 'lips', name: 'Hydrating Lip Oil - Clear Glass', description: 'A deeply nourishing lip oil that provides a high-shine finish without the stickiness. Infused with squalane and jojoba oil.', price: 2800.00, image_url: 'img/product_lipstick_rose_1772288678759.png', featured: true },
+    { id: 'prod_12', category_id: 'lips', name: 'Satin Lipstick - Peachy Keen', description: 'A buttery satin finish lipstick in a universally flattering warm peach shade.', price: 3500.00, image_url: 'img/product_lipstick_rose_1772288678759.png', featured: false },
+    { id: 'prod_13', category_id: 'eyes', name: 'Volumizing Mascara', description: 'An ultra-black, smudge-proof mascara that delivers dramatic volume and length with a single coat.', price: 4200.00, image_url: 'img/product_mascara_1773847204497.png', featured: true, top_selling: true },
+    { id: 'prod_14', category_id: 'eyes', name: 'Waterproof Gel Eyeliner', description: 'A creamy, highly pigmented gel eyeliner pencil that glides perfectly and sets for all-day wear.', price: 2500.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
+    { id: 'prod_15', category_id: 'eyes', name: 'Brow Sculpting Gel', description: 'A clear, strong-hold brow gel that keeps hairs perfectly placed all day without flaking.', price: 3200.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
+    { id: 'prod_16', category_id: 'face', name: 'Radiant Cream Concealer', description: 'A multi-action concealer that instantly brightens the under-eye area and blurs imperfections.', price: 4800.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: true },
+    { id: 'prod_17', category_id: 'face', name: 'Luminous Bronzing Powder', description: 'A finely milled, warm-toned bronzer that gives the skin a sun-kissed, natural glow without looking muddy.', price: 5800.00, image_url: 'img/product_bronzer_1773847555819.png', featured: false, top_selling: true },
+    { id: 'prod_18', category_id: 'face', name: 'Dewy Setting Spray', description: 'A refreshing, weightless mist that sets makeup in place for 16 hours while providing a hydrated, glowing finish.', price: 4500.00, image_url: 'img/product_setting_spray_1773847765323.png', featured: true },
+    { id: 'prod_19', category_id: 'face', name: 'Liquid Blush - Coral Flush', description: 'A highly pigmented, blendable liquid blush that melts into the skin for a seamless pop of color.', price: 3900.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: false },
+    { id: 'prod_20', category_id: 'face', name: 'Translucent Setting Powder', description: 'An ultra-fine setting powder that blurs pores and controls shine without causing flashback.', price: 5500.00, image_url: 'img/product_bronzer_1773847555819.png', featured: false },
+    { id: 'prod_21', category_id: 'nails', name: 'High-Gloss Top Coat Gel', description: 'A diamond-shine top coat that seals in color and prevents chipping for up to 14 days.', price: 2400.00, image_url: 'img/product_nail_polish_1772289865495.png', featured: false, top_selling: true },
+    { id: 'prod_22', category_id: 'nails', name: 'Nourishing Base Coat', description: 'A vitamin-enriched base coat that protects the natural nail and creates a smooth canvas for color.', price: 2400.00, image_url: 'img/product_nail_polish_red_1773337488662.png', featured: false },
+    { id: 'prod_23', category_id: 'tools', name: 'Pro Blend Beauty Sponge', description: 'A latex-free makeup sponge designed to seamlessly blend liquid and cream products for an airbrushed finish.', price: 1500.00, image_url: 'img/product_makeup_brushes_1772290013332.png', featured: true },
+    { id: 'prod_24', category_id: 'tools', name: 'Precision Eyelash Curler', description: 'An ergonomically designed eyelash curler that catches every lash for a dramatic, pinch-free lift.', price: 2200.00, image_url: 'img/product_nail_file_1773337790487.png', featured: false },
+    { id: 'prod_25', category_id: 'lips', name: 'Matte Liquid Lipstick - Nude', description: 'A weightless, transfer-proof liquid lipstick in a perfectly balanced everyday nude.', price: 3200.00, image_url: 'img/product_lipstick_rose_1772288678759.png', featured: false },
+    { id: 'prod_26', category_id: 'lips', name: 'Matte Lipstick - Deep Berry', description: 'A sleek, highly pigmented deep berry matte lipstick that stays perfectly smooth all day.', price: 3400.00, image_url: 'img/product_matte_berry_1773848484463.png', featured: true },
+    { id: 'prod_27', category_id: 'lips', name: 'High-Shine Gloss - Cherry Splash', description: 'A glamorous, non-sticky cherry red lip gloss that provides an editorial-level high-shine clear finish.', price: 2900.00, image_url: 'img/product_glossy_lips_1773848270767.png', featured: false, top_selling: true },
+    { id: 'prod_28', category_id: 'lips', name: 'Shimmer Gloss - Rose Gold', description: 'A beautiful rose gold lip gloss featuring ultra-fine reflecting pearls and a precise doe-foot applicator.', price: 3100.00, image_url: 'img/product_shimmer_gloss_1773848946080.png', featured: true },
+    { id: 'prod_29', category_id: 'lips', name: 'Velvet Plumping Gloss - Petal Pink', description: 'A cooling, plumping gloss in a soft, muted petal pink that naturally enhances the lips.', price: 3300.00, image_url: 'img/product_lipstick_rose_1772288678759.png', featured: false },
+    { id: 'prod_30', category_id: 'lips', name: 'Liquid Matte - Scarlet Red', description: 'An intense, vivid scarlet red liquid matte lipstick with 16-hour lock-in technology.', price: 3600.00, image_url: 'img/product_matte_berry_1773848484463.png', featured: false },
+    { id: 'prod_31', category_id: 'eyes', name: 'Precision Liquid Eyeliner', description: 'A sleek black liquid eyeliner pen with a continuous flow felt tip for sharp, perfect wings.', price: 2800.00, image_url: 'img/product_mascara_1773847204497.png', featured: true },
+    { id: 'prod_32', category_id: 'eyes', name: 'Shimmer Cream Eyeshadow', description: 'A highly blendable, crease-proof champagne cream eyeshadow that sets to a luminous powder finish.', price: 3100.00, image_url: 'img/product_eyeshadow_palette_1772289307951.png', featured: false },
+    { id: 'prod_33', category_id: 'eyes', name: 'Natural Flutter False Lashes', description: 'Lightweight, wispy false eyelashes that blend seamlessly with your natural lash line.', price: 2100.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
+    { id: 'prod_34', category_id: 'eyes', name: 'Micro-Fine Brow Pencil', description: 'An ultra-slim, retractable brow pencil for creating precise, hair-like strokes.', price: 2500.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
+    { id: 'prod_35', category_id: 'eyes', name: '24H Eye Primer Base', description: 'A smoothing eyeshadow primer that prevents creasing and intensifies shadow pigmentation.', price: 2700.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: false }
 ];
+
+products.forEach(p => {
+    if (p.category_id === 'lips') {
+        p.ingredients = 'Vitamin E, Shea Butter, Jojoba Oil, Natural Pigments.';
+        p.details = 'Long-lasting up to 8 hours. Non-drying, comfortable wear.';
+    } else if (p.category_id === 'eyes') {
+        p.ingredients = 'Mica, Talc, Silica, Magnesium Stearate.';
+        p.details = 'Crease-proof wear up to 12 hours. Highly blendable.';
+    } else if (p.category_id === 'face') {
+        p.ingredients = 'Water, Glycerin, Hyaluronic Acid, Mineral Pigments.';
+        p.details = 'Provides medium-to-full buildable coverage for 24 hours.';
+    } else if (p.category_id === 'nails') {
+        p.ingredients = 'Ethyl Acetate, Butyl Acetate, Nitrocellulose.';
+        p.details = 'Chip-resistant gel formula outlasting up to 14 days.';
+    } else if (p.category_id === 'tools') {
+        p.ingredients = '100% Vegan synthetic fibers / Premium materials.';
+        p.details = 'Durable and ergonomically designed for professional use.';
+    }
+    p.reviews = Math.floor(Math.random() * 320) + 18;
+});
+
+const renderStars = (reviews) => `
+    <div class="text-warning small mb-2 d-flex align-items-center">
+        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        <span class="text-muted ms-1" style="font-size: 0.8rem;">(${reviews})</span>
+    </div>
+`;
 
 // Utility Functions
 const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price);
+    return 'Ksh ' + price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 };
 
 const updateCartBadge = () => {
@@ -147,8 +203,12 @@ const renderProductCard = (product) => {
                     <div class="product-info">
                         <div class="product-category">${categories.find(c => c.id === product.category_id)?.name || ''}</div>
                         <h3 class="product-title">${product.name}</h3>
-                        <div class="product-price">${formatPrice(product.price)}</div>
-                        <button class="btn btn-outline-custom mt-2 w-100" onclick="event.preventDefault(); addToCart('${product.id}')">Add to Bag</button>
+                        ${renderStars(product.reviews)}
+                        <div class="product-price mb-2">${formatPrice(product.price)}</div>
+                        <div class="d-flex gap-2 w-100 z-3 position-relative">
+                            <button class="btn btn-outline-custom flex-grow-1 px-1" onclick="event.preventDefault(); event.stopPropagation(); addToCart('${product.id}')">Add to Bag</button>
+                            <span class="btn btn-dark flex-grow-1 px-1">View Product</span>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -170,6 +230,59 @@ const renderCategoryCircle = (category) => {
     `;
 };
 
+const showProductInfo = (productId) => {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    let modalEl = document.getElementById('quickInfoModal');
+    if (!modalEl) {
+        document.body.insertAdjacentHTML('beforeend', `
+            <div class="modal fade" id="quickInfoModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0">
+                        <div class="modal-header border-0 pb-0">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body px-4 pb-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <img src="" id="qi-image" class="rounded me-3 border" style="width: 80px; height: 80px; object-fit: cover;">
+                                <div>
+                                    <h5 class="mb-1 fw-bold" id="qi-title"></h5>
+                                    <div class="text-muted small text-uppercase letter-spacing-1" id="qi-category"></div>
+                                </div>
+                            </div>
+                            <h6 class="font-heading mb-2 fw-bold text-dark">Details & Wear</h6>
+                            <p class="text-muted small mb-4" id="qi-details"></p>
+                            <h6 class="font-heading mb-2 fw-bold text-dark">Ingredients & Materials</h6>
+                            <p class="text-muted small mb-4" id="qi-ingredients"></p>
+                        </div>
+                        <div class="modal-footer border-0 pt-0 px-4 pb-4">
+                            <button class="btn btn-primary-custom w-100 py-3" id="qi-add-btn">Add to Bag - <span id="qi-price"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `);
+        modalEl = document.getElementById('quickInfoModal');
+    }
+
+    document.getElementById('qi-image').src = product.image_url;
+    document.getElementById('qi-title').textContent = product.name;
+    document.getElementById('qi-category').textContent = categories.find(c => c.id === product.category_id)?.name || '';
+    document.getElementById('qi-details').textContent = product.details || product.description;
+    document.getElementById('qi-ingredients').textContent = product.ingredients || 'Details unavailable.';
+    document.getElementById('qi-price').textContent = formatPrice(product.price);
+
+    document.getElementById('qi-add-btn').onclick = () => {
+        addToCart(product.id);
+        const modalInstance = bootstrap.Modal.getInstance(modalEl);
+        if (modalInstance) modalInstance.hide();
+    };
+
+    const modal = new bootstrap.Modal(modalEl);
+    modal.show();
+};
+
 // Page Initialization
 const initHomepage = () => {
     // Render Categories
@@ -184,6 +297,13 @@ const initHomepage = () => {
     if (featuredContainer) {
         const featuredProducts = products.filter(p => p.featured).slice(0, 4);
         featuredContainer.innerHTML = featuredProducts.map(renderProductCard).join('');
+    }
+
+    // Render Top Selling Products
+    const topSellingContainer = document.getElementById('top-selling-products');
+    if (topSellingContainer) {
+        const topSellingProducts = products.filter(p => p.top_selling).slice(0, 4);
+        topSellingContainer.innerHTML = topSellingProducts.map(renderProductCard).join('');
     }
 };
 
