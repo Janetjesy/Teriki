@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers & Deals - Teriki Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <style>
+        .offers-hero {
+            background: linear-gradient(135deg, #f8c8d4 0%, #fdeef2 50%, #fce8d0 100%);
+            padding-top: 140px;
+            padding-bottom: 70px;
+        }
+
+        .offer-countdown {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            display: inline-block;
+            backdrop-filter: blur(8px);
+            margin-top: 1.5rem;
+        }
+
+        .sale-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #e63946;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 0.25rem 0.65rem;
+            z-index: 2;
+            letter-spacing: 0.5px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .offer-price {
+            color: #e63946;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .saving-pill {
+            background: #fff0f2;
+            color: #e63946;
+            border-radius: 50px;
+            padding: 0.15rem 0.6rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .filter-btn {
+            border-radius: 50px;
+            padding: 0.4rem 1.1rem;
+            font-size: 0.9rem;
+            border: 1.5px solid #dee2e6;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #c96a87;
+            border-color: #c96a87;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/favicon.png" alt="Teriki" width="28" height="28"
+                    class="me-2 rounded-circle border border-1">
+                TERIKI
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop All</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=lips">Lips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=eyes">Eyes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=face">Face</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=nails">Nails</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=tools">Tools & Brushes</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal"
+                        title="Search"><i class="bi bi-search"></i></a>
+                    <a href="offers.html" class="me-3 position-relative" title="Offers & Deals" style="color:#e63946;">
+                        <i class="bi bi-tag-fill fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="font-size:0.55rem; padding:3px 5px;">SALE</span>
+                    </a>
+                    <a href="#" class="text-dark me-3"><i class="bi bi-person"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i class="bi bi-bag"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="offers-hero text-center">
+        <div class="container">
+            <span class="badge rounded-pill mb-3"
+                style="background:#e63946; font-size:0.85rem; padding:0.5rem 1.2rem;">🔥 Limited Time Deals</span>
+            <h1 class="font-heading display-3 fw-bold mb-3">Teriki Offers</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 540px;">Exclusive discounts on your favourite luxury
+                beauty essentials. Shop now before they're gone!</p>
+            <div class="offer-countdown">
+                <span class="fw-semibold">✨ Over <span id="offer-count" class="text-danger fw-bold">—</span> products on
+                    sale right now</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="bg-white border-bottom py-3 sticky-top" style="top: 66px; z-index: 100;">
+        <div class="container">
+            <div class="d-flex gap-2 flex-wrap">
+                <button class="filter-btn active" data-filter="all">All Deals</button>
+                <button class="filter-btn" data-filter="lips">Lips</button>
+                <button class="filter-btn" data-filter="eyes">Eyes</button>
+                <button class="filter-btn" data-filter="face">Face</button>
+                <button class="filter-btn" data-filter="nails">Nails</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offer Products Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4" id="offers-grid">
+                <!-- JS injects cards here -->
+            </div>
+            <div id="offers-empty" class="text-center py-5 d-none">
+                <i class="bi bi-bag-x fs-1 text-muted"></i>
+                <p class="text-muted mt-3">No offers in this category right now.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pt-0 pb-5 px-4">
+                    <h5 class="modal-title mb-4" id="searchModalLabel">What are you looking for?</h5>
+                    <form action="shop.html" method="GET" class="d-flex w-100">
+                        <input type="text" name="search" class="form-control rounded-pill border-dark me-2"
+                            placeholder="Search products..." autofocus required>
+                        <button type="submit" class="btn btn-primary-custom rounded-pill px-4">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">TERIKI</div>
+                    <p class="text-muted pe-4">Empowering beauty for every generation. Formulated with care, designed
+                        with elegance.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-pinterest"></i></a>
+                        <a href="https://wa.me/254112086888" target="_blank" class="social-icon"><i
+                                class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="mb-3">Shop</h5>
+                    <a href="shop.html?category=lips" class="footer-link">Lips</a>
+                    <a href="shop.html?category=eyes" class="footer-link">Eyes</a>
+                    <a href="shop.html?category=face" class="footer-link">Face</a>
+                    <a href="shop.html?category=nails" class="footer-link">Nails</a>
+                    <a href="shop.html?category=tools" class="footer-link">Tools</a>
+                </div>
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="mb-3">About</h5>
+                    <a href="about.html" class="footer-link">Our Story</a>
+                    <a href="sustainability.html" class="footer-link">Sustainability</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer-link">Terms & Conditions</a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-3">Join the Teriki Family</h5>
+                    <p class="text-muted mb-3">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                    <form class="d-flex" onsubmit="event.preventDefault();">
+                        <input type="email" class="form-control rounded-pill me-2" placeholder="Enter your email"
+                            required>
+                        <button type="submit" class="btn btn-primary-custom">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-5 pt-4 border-top">
+                <div class="col-md-6 text-center text-md-start text-muted">&copy; 2026 Teriki Beauty. All rights
+                    reserved.</div>
+                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+                    <a href="privacy.html" class="text-muted me-3 text-decoration-none">Privacy Policy</a>
+                    <a href="terms.html" class="text-muted text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartCount();
+            const offerProducts = products.filter(p => p.on_offer);
+            document.getElementById('offer-count').textContent = offerProducts.length;
+
+            let currentFilter = 'all';
+
+            const renderOfferCard = (p) => {
+                const cat = categories.find(c => c.id === p.category_id)?.name || '';
+                const saving = Math.round(((p.price - p.discount_price) / p.price) * 100);
+                return `
+                    <div class="col-lg-3 col-md-4 col-sm-6 offer-item" data-category="${p.category_id}">
+                        <div class="product-card h-100 position-relative">
+                            <span class="sale-badge">-${saving}% OFF</span>
+                            <a href="product.html?id=${p.id}" class="text-decoration-none text-dark d-flex flex-column h-100">
+                                <div class="product-img-wrapper">
+                                    <img src="${p.image_url}" class="product-img" alt="${p.name}">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-category">${cat}</div>
+                                    <h3 class="product-title">${p.name}</h3>
+                                    ${renderStars(p.reviews)}
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="offer-price">${formatPrice(p.discount_price)}</span>
+                                        <span class="original-price">${formatPrice(p.price)}</span>
+                                        <span class="saving-pill">Save Ksh ${(p.price - p.discount_price).toLocaleString()}</span>
+                                    </div>
+                                    <div class="d-flex gap-2 w-100 z-3 position-relative">
+                                        <button class="btn btn-outline-custom flex-grow-1 px-1" onclick="event.preventDefault(); event.stopPropagation(); addToCart('${p.id}')">Add to Bag</button>
+                                        <span class="btn btn-dark flex-grow-1 px-1">View Product</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>`;
+            };
+
+            const renderOffers = (filter) => {
+                const filtered = filter === 'all' ? offerProducts : offerProducts.filter(p => p.category_id === filter);
+                const grid = document.getElementById('offers-grid');
+                const empty = document.getElementById('offers-empty');
+                if (filtered.length === 0) {
+                    grid.innerHTML = '';
+                    empty.classList.remove('d-none');
+                } else {
+                    grid.innerHTML = filtered.map(renderOfferCard).join('');
+                    empty.classList.add('d-none');
+                }
+            };
+
+            renderOffers('all');
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderOffers(btn.dataset.filter);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

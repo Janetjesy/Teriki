@@ -21,7 +21,8 @@ const products = [
         price: 3000.00,
         image_url: 'img/product_lipstick_rose_1772288678759.png',
         featured: true,
-        top_selling: true
+        top_selling: true,
+        on_offer: true, discount_price: 2100.00
     },
     {
         id: 'prod_2',
@@ -30,7 +31,8 @@ const products = [
         description: 'An elegant 12-pan eyeshadow palette featuring matte and subtle shimmer shades perfect for everyday wear and gentle transitions.',
         price: 5500.00,
         image_url: 'img/product_eyeshadow_palette_1772289307951.png',
-        featured: true
+        featured: true,
+        on_offer: true, discount_price: 3850.00
     },
     {
         id: 'prod_3',
@@ -40,7 +42,8 @@ const products = [
         price: 6500.00,
         image_url: 'img/product_liquid_foundation_1772289575810.png',
         featured: true,
-        top_selling: true
+        top_selling: true,
+        on_offer: true, discount_price: 5200.00
     },
     {
         id: 'prod_4',
@@ -59,7 +62,8 @@ const products = [
         price: 2200.00,
         image_url: 'img/product_nail_polish_1772289865495.png',
         featured: true,
-        top_selling: true
+        top_selling: true,
+        on_offer: true, discount_price: 1540.00
     },
     {
         id: 'prod_7',
@@ -87,7 +91,8 @@ const products = [
         price: 9500.00,
         image_url: 'img/product_makeup_brushes_1772290013332.png',
         featured: false,
-        top_selling: true
+        top_selling: true,
+        on_offer: true, discount_price: 6650.00
     },
     {
         id: 'prod_9',
@@ -105,16 +110,17 @@ const products = [
         description: 'A modern, sleek, minimalist dome-shaped professional UV LED nail lamp for flawless at-home gel manicures.',
         price: 7500.00,
         image_url: 'img/product_nail_lamp_1773338081677.png',
-        featured: true
+        featured: true,
+        on_offer: true, discount_price: 5625.00
     },
     { id: 'prod_11', category_id: 'lips', name: 'Hydrating Lip Oil - Clear Glass', description: 'A deeply nourishing lip oil that provides a high-shine finish without the stickiness. Infused with squalane and jojoba oil.', price: 2800.00, image_url: 'img/product_lipstick_rose_1772288678759.png', featured: true },
     { id: 'prod_12', category_id: 'lips', name: 'Satin Lipstick - Peachy Keen', description: 'A buttery satin finish lipstick in a universally flattering warm peach shade.', price: 3500.00, image_url: 'img/product_lipstick_rose_1772288678759.png', featured: false },
-    { id: 'prod_13', category_id: 'eyes', name: 'Volumizing Mascara', description: 'An ultra-black, smudge-proof mascara that delivers dramatic volume and length with a single coat.', price: 4200.00, image_url: 'img/product_mascara_1773847204497.png', featured: true, top_selling: true },
+    { id: 'prod_13', category_id: 'eyes', name: 'Volumizing Mascara', description: 'An ultra-black, smudge-proof mascara that delivers dramatic volume and length with a single coat.', price: 4200.00, image_url: 'img/product_mascara_1773847204497.png', featured: true, top_selling: true, on_offer: true, discount_price: 2940.00 },
     { id: 'prod_14', category_id: 'eyes', name: 'Waterproof Gel Eyeliner', description: 'A creamy, highly pigmented gel eyeliner pencil that glides perfectly and sets for all-day wear.', price: 2500.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
     { id: 'prod_15', category_id: 'eyes', name: 'Brow Sculpting Gel', description: 'A clear, strong-hold brow gel that keeps hairs perfectly placed all day without flaking.', price: 3200.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
-    { id: 'prod_16', category_id: 'face', name: 'Radiant Cream Concealer', description: 'A multi-action concealer that instantly brightens the under-eye area and blurs imperfections.', price: 4800.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: true },
+    { id: 'prod_16', category_id: 'face', name: 'Radiant Cream Concealer', description: 'A multi-action concealer that instantly brightens the under-eye area and blurs imperfections.', price: 4800.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: true, on_offer: true, discount_price: 3360.00 },
     { id: 'prod_17', category_id: 'face', name: 'Luminous Bronzing Powder', description: 'A finely milled, warm-toned bronzer that gives the skin a sun-kissed, natural glow without looking muddy.', price: 5800.00, image_url: 'img/product_bronzer_1773847555819.png', featured: false, top_selling: true },
-    { id: 'prod_18', category_id: 'face', name: 'Dewy Setting Spray', description: 'A refreshing, weightless mist that sets makeup in place for 16 hours while providing a hydrated, glowing finish.', price: 4500.00, image_url: 'img/product_setting_spray_1773847765323.png', featured: true },
+    { id: 'prod_18', category_id: 'face', name: 'Dewy Setting Spray', description: 'A refreshing, weightless mist that sets makeup in place for 16 hours while providing a hydrated, glowing finish.', price: 4500.00, image_url: 'img/product_setting_spray_1773847765323.png', featured: true, on_offer: true, discount_price: 3150.00 },
     { id: 'prod_19', category_id: 'face', name: 'Liquid Blush - Coral Flush', description: 'A highly pigmented, blendable liquid blush that melts into the skin for a seamless pop of color.', price: 3900.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: false },
     { id: 'prod_20', category_id: 'face', name: 'Translucent Setting Powder', description: 'An ultra-fine setting powder that blurs pores and controls shine without causing flashback.', price: 5500.00, image_url: 'img/product_bronzer_1773847555819.png', featured: false },
     { id: 'prod_21', category_id: 'nails', name: 'High-Gloss Top Coat Gel', description: 'A diamond-shine top coat that seals in color and prevents chipping for up to 14 days.', price: 2400.00, image_url: 'img/product_nail_polish_1772289865495.png', featured: false, top_selling: true },
@@ -131,7 +137,35 @@ const products = [
     { id: 'prod_32', category_id: 'eyes', name: 'Shimmer Cream Eyeshadow', description: 'A highly blendable, crease-proof champagne cream eyeshadow that sets to a luminous powder finish.', price: 3100.00, image_url: 'img/product_eyeshadow_palette_1772289307951.png', featured: false },
     { id: 'prod_33', category_id: 'eyes', name: 'Natural Flutter False Lashes', description: 'Lightweight, wispy false eyelashes that blend seamlessly with your natural lash line.', price: 2100.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
     { id: 'prod_34', category_id: 'eyes', name: 'Micro-Fine Brow Pencil', description: 'An ultra-slim, retractable brow pencil for creating precise, hair-like strokes.', price: 2500.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
-    { id: 'prod_35', category_id: 'eyes', name: '24H Eye Primer Base', description: 'A smoothing eyeshadow primer that prevents creasing and intensifies shadow pigmentation.', price: 2700.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: false }
+    { id: 'prod_35', category_id: 'eyes', name: '24H Eye Primer Base', description: 'A smoothing eyeshadow primer that prevents creasing and intensifies shadow pigmentation.', price: 2700.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: false },
+
+    // --- MORE LIPS ---
+    { id: 'prod_36', category_id: 'lips', name: 'Ombre Lip Duo - Coral Sunset', description: 'A dual-ended lip duo to create a beautiful coral-to-peach ombre effect effortlessly.', price: 4500.00, image_url: 'img/product_glossy_lips_1773848270767.png', featured: true },
+    { id: 'prod_37', category_id: 'lips', name: 'Tinted Lip Balm - SPF 30', description: 'A hydrating, lightly tinted balm with SPF 30 protection. Perfect for everyday wear.', price: 2200.00, image_url: 'img/product_shimmer_gloss_1773848946080.png', featured: false },
+    { id: 'prod_38', category_id: 'lips', name: 'Satin Liner - Classic Red', description: 'A smooth, creamy lip liner that defines and shapes in a bold classic red.', price: 2000.00, image_url: 'img/product_matte_berry_1773848484463.png', featured: false },
+
+    // --- MORE EYES ---
+    { id: 'prod_39', category_id: 'eyes', name: 'Smoked Kohl Pencil', description: 'A soft, smoky kohl pencil for creating sultry, intense looks. Available in jet black.', price: 2300.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
+    { id: 'prod_40', category_id: 'eyes', name: 'Pink Dreams Eyeshadow Palette', description: 'A curated 12-pan palette spanning soft mauve, blush and dusty rose tones.', price: 7800.00, image_url: 'img/product_eyeshadow_palette_1772289307951.png', featured: true, top_selling: true },
+    { id: 'prod_41', category_id: 'eyes', name: 'Lengthening Lash Serum', description: 'A nourishing conditioning serum that promotes longer, thicker-looking lashes with daily use.', price: 6500.00, image_url: 'img/product_mascara_1773847204497.png', featured: false },
+    { id: 'prod_42', category_id: 'eyes', name: 'Setting Eye Spray', description: 'A quick-dry mist that locks eyeshadow pigments in place for wearability throughout the day.', price: 3800.00, image_url: 'img/product_setting_spray_1773847765323.png', featured: false },
+
+    // --- MORE FACE ---
+    { id: 'prod_43', category_id: 'face', name: 'Glass Skin Serum Foundation', description: 'A lightweight buildable foundation with hyaluronic acid giving skin a glass-like finish.', price: 7200.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: true, top_selling: true },
+    { id: 'prod_44', category_id: 'face', name: 'Pressed Highlight Powder', description: 'An ultra-fine pressed highlighter in a golden champagne shade that flatters all skin tones.', price: 5400.00, image_url: 'img/product_bronzer_1773847555819.png', featured: false },
+    { id: 'prod_45', category_id: 'face', name: 'Pore-Blurring Primer', description: 'A velvety face primer that minimizes the appearance of pores and keeps makeup locked in all day.', price: 5000.00, image_url: 'img/product_setting_spray_1773847765323.png', featured: false },
+    { id: 'prod_46', category_id: 'face', name: 'Skin Tint SPF 20 - Medium', description: 'A breathable, skin-perfecting tint that evens out complexion while providing light sun protection.', price: 4600.00, image_url: 'img/product_liquid_foundation_1772289575810.png', featured: false },
+
+    // --- MORE NAILS ---
+    { id: 'prod_47', category_id: 'nails', name: 'Gel Polish - Lavender Haze', description: 'A dreamy soft lavender gel polish that cures under UV/LED lamp for chip-free shine.', price: 2600.00, image_url: 'img/product_nail_polish_1772289865495.png', featured: true },
+    { id: 'prod_48', category_id: 'nails', name: 'Gel Polish - Ocean Blue', description: 'A rich, deep ocean blue gel polish offering a smooth, high-gloss finish without smudging.', price: 2600.00, image_url: 'img/product_nail_polish_black_1773337687427.png', featured: false },
+    { id: 'prod_49', category_id: 'nails', name: 'Nail Strengthener Treatment', description: 'A fortifying nail treatment enriched with biotin and calcium to prevent breakage.', price: 3000.00, image_url: 'img/product_nail_polish_red_1773337488662.png', featured: false },
+
+    // --- MORE TOOLS ---
+    { id: 'prod_50', category_id: 'tools', name: 'Fan Brush - Highlight & Contour', description: 'A fluffy fan brush designed to sweep highlighter across cheekbones and blend seamlessly.', price: 2800.00, image_url: 'img/product_makeup_brushes_1772290013332.png', featured: false },
+    { id: 'prod_51', category_id: 'tools', name: 'Kabuki Brush - Powder & Blush', description: 'A dense, dome-shaped kabuki brush that buffs powder products into the skin flawlessly.', price: 3200.00, image_url: 'img/product_makeup_brushes_1772290013332.png', featured: false },
+    { id: 'prod_52', category_id: 'tools', name: 'Mini Silicone Mixing Palette', description: 'A handy art palette for mixing concealers and foundations to find your perfect shade match.', price: 1200.00, image_url: 'img/product_nail_file_1773337790487.png', featured: false },
+    { id: 'prod_53', category_id: 'tools', name: 'Makeup Organizer Pouch', description: 'A chic, travel-friendly makeup bag with multiple compartments to keep your kit tidy.', price: 2500.00, image_url: 'img/product_makeup_brushes_1772290013332.png', featured: true }
 ];
 
 products.forEach(p => {

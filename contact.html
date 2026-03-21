@@ -4,21 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - Teriki Beauty</title>
-    <!-- Google Fonts -->
+    <title>Contact Us - Teriki Beauty</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
+    <style>
+        .contact-card {
+            border: none;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-icon-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .whatsapp-icon-wrap {
+            background-color: #e7f8ee;
+            color: #25D366;
+        }
+
+        .email-icon-wrap {
+            background-color: #fff0f3;
+            color: #c96a87;
+        }
+
+        .contact-link {
+            font-size: 1.15rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .contact-link:hover {
+            opacity: 0.75;
+        }
+
+        .whatsapp-link {
+            color: #25D366;
+        }
+
+        .email-link {
+            color: #c96a87;
+        }
+
+        .contact-btn {
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: 2px solid #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1ebe58;
+            border-color: #1ebe58;
+            color: white;
+            transform: scale(1.03);
+        }
+
+        .btn-email {
+            background-color: transparent;
+            color: #c96a87;
+            border: 2px solid #c96a87;
+        }
+
+        .btn-email:hover {
+            background-color: #c96a87;
+            color: white;
+            transform: scale(1.03);
+        }
+    </style>
 </head>
 
 <body>
@@ -37,27 +123,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="shop.html" id="nav-shop-all">Shop All</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html?category=lips" id="nav-lips">Lips</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html?category=eyes" id="nav-eyes">Eyes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html?category=face" id="nav-face">Face</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html?category=nails" id="nav-nails">Nails</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="shop.html?category=tools" id="nav-tools">Tools & Brushes</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop All</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=lips">Lips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=eyes">Eyes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=face">Face</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=nails">Nails</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html?category=tools">Tools & Brushes</a></li>
                 </ul>
                 <div class="d-flex align-items-center">
                     <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i
@@ -73,48 +145,64 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <div class="bg-white"
-        style="padding-top: 120px; padding-bottom: 40px; border-bottom: 1px solid var(--border-color);">
+    <!-- Hero Header -->
+    <div class="bg-light" style="padding-top: 140px; padding-bottom: 80px;">
         <div class="container text-center">
-            <h1 class="mb-3" id="shop-title">Shop All Products</h1>
-            <p class="text-muted mx-auto" style="max-width: 600px;" id="shop-description">Explore our curated collection
-                of elegant, high-performance beauty and makeup products for an effortless, radiant look.</p>
+            <h1 class="font-heading display-4 mb-3">Get In Touch</h1>
+            <p class="text-muted mx-auto lead" style="max-width: 600px;">
+                Have a question about an order, a product, or just want to say hello? We would love to hear from you!
+            </p>
         </div>
     </div>
 
-    <!-- Shop Content -->
+    <!-- Contact Section -->
     <section class="section-padding">
         <div class="container">
-            <div class="row">
-                <!-- Sidebar Filters -->
-                <div class="col-lg-3 d-none d-lg-block">
-                    <div class="sticky-top" style="top: 100px;">
-                        <h4 class="mb-4">Categories</h4>
-                        <ul class="list-unstyled" id="category-sidebar">
-                            <!-- Populated by JS -->
-                            <li class="mb-2"><a href="shop.html" class="text-dark text-decoration-none fw-medium">All
-                                    Products</a></li>
-                        </ul>
+            <div class="row justify-content-center g-4">
+
+                <!-- WhatsApp Card -->
+                <div class="col-md-5">
+                    <div class="contact-card bg-white text-center h-100">
+                        <div class="contact-icon-wrap whatsapp-icon-wrap">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <h4 class="font-heading mb-2">Chat on WhatsApp</h4>
+                        <p class="text-muted mb-3">We reply fast! Message us directly for product advice, order help, or
+                            anything else.</p>
+                        <a href="https://wa.me/254112086888" target="_blank"
+                            class="contact-link whatsapp-link d-block mb-4">
+                            +254 0112 086 888
+                        </a>
+                        <a href="https://wa.me/254112086888" target="_blank" class="contact-btn btn-whatsapp">
+                            <i class="bi bi-whatsapp"></i> Message Us on WhatsApp
+                        </a>
                     </div>
                 </div>
 
-                <!-- Product Grid -->
-                <div class="col-lg-9">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div id="product-count" class="text-muted">Showing all products</div>
-                        <select class="form-select w-auto" id="sort-select">
-                            <option value="default">Sort by: Default</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="name">Name: A to Z</option>
-                        </select>
-                    </div>
-
-                    <div class="row g-4" id="shop-product-grid">
-                        <!-- Populated by JS -->
+                <!-- Email Card -->
+                <div class="col-md-5">
+                    <div class="contact-card bg-white text-center h-100">
+                        <div class="contact-icon-wrap email-icon-wrap">
+                            <i class="bi bi-envelope-heart"></i>
+                        </div>
+                        <h4 class="font-heading mb-2">Send Us an Email</h4>
+                        <p class="text-muted mb-3">For detailed enquiries, collaborations, or wholesale requests, drop
+                            us a line.</p>
+                        <a href="mailto:jaycijay35@gmail.com" class="contact-link email-link d-block mb-4">
+                            jaycijay35@gmail.com
+                        </a>
+                        <a href="mailto:jaycijay35@gmail.com" class="contact-btn btn-email">
+                            <i class="bi bi-envelope"></i> Send an Email
+                        </a>
                     </div>
                 </div>
+
+            </div>
+
+            <!-- Hours note -->
+            <div class="text-center mt-5 pt-3">
+                <p class="text-muted"><i class="bi bi-clock me-2"></i>We typically respond within <strong>2–4
+                        hours</strong> on business days (Mon – Sat, 9am – 6pm EAT).</p>
             </div>
         </div>
     </section>
@@ -150,6 +238,8 @@
                         <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="bi bi-tiktok"></i></a>
                         <a href="#" class="social-icon"><i class="bi bi-pinterest"></i></a>
+                        <a href="https://wa.me/254112086888" target="_blank" class="social-icon"><i
+                                class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6">
@@ -190,72 +280,8 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- App JS -->
     <script src="js/app.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const activeCategory = urlParams.get('category');
-            const searchQuery = urlParams.get('search');
-
-            // Build Sidebar
-            const sidebar = document.getElementById('category-sidebar');
-            categories.forEach(cat => {
-                const isActive = activeCategory === cat.id ? 'fw-bold text-primary-custom' : '';
-                sidebar.innerHTML += `<li class="mb-2"><a href="shop.html?category=${cat.id}" class="text-dark text-decoration-none ${isActive}">${cat.name}</a></li>`;
-            });
-
-            // Filter Products
-            let displayProducts = products;
-
-            if (searchQuery) {
-                const query = searchQuery.toLowerCase();
-                displayProducts = displayProducts.filter(p =>
-                    p.name.toLowerCase().includes(query) ||
-                    p.description.toLowerCase().includes(query)
-                );
-                document.getElementById('shop-title').textContent = `Search Results for "${searchQuery}"`;
-                document.getElementById('shop-description').textContent = '';
-            } else if (activeCategory) {
-                displayProducts = products.filter(p => p.category_id === activeCategory);
-                const categoryObj = categories.find(c => c.id === activeCategory);
-                if (categoryObj) {
-                    document.getElementById('shop-title').textContent = categoryObj.name;
-                    document.getElementById('shop-description').textContent = `Explore our elegant ${categoryObj.name.toLowerCase()} collection.`;
-                }
-            }
-
-            document.getElementById('product-count').textContent = `Showing ${displayProducts.length} product(s)`;            // Render Function
-            const renderGrid = (items) => {
-                document.getElementById('shop-product-grid').innerHTML = items.map(renderProductCard).join('');
-            };
-
-            // Sort functionality
-            document.getElementById('sort-select').addEventListener('change', (e) => {
-                const sortType = e.target.value;
-                let sorted = [...displayProducts];
-                if (sortType === 'price-low') sorted.sort((a, b) => a.price - b.price);
-                else if (sortType === 'price-high') sorted.sort((a, b) => b.price - a.price);
-                else if (sortType === 'name') sorted.sort((a, b) => a.name.localeCompare(b.name));
-
-                renderGrid(sorted);
-            });
-
-            // Initial render
-            renderGrid(displayProducts);
-
-            // Update Active Nav Link
-            document.querySelectorAll('.navbar-nav .nav-link').forEach(link => link.classList.remove('active'));
-            if (activeCategory) {
-                const navLink = document.getElementById(`nav-${activeCategory}`);
-                if (navLink) navLink.classList.add('active');
-            } else {
-                document.getElementById('nav-shop-all').classList.add('active');
-            }
-        });
-    </script>
 </body>
 
 </html>
