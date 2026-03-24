@@ -28,8 +28,15 @@
             <div class="d-flex align-items-center ms-auto">
                 <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i
                         class="bi bi-search"></i></a>
-                    <a href="offers.html" class="me-3 position-relative" title="Offers &amp; Deals" style="color:#e63946;"><i class="bi bi-tag-fill fs-5"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.55rem; padding:3px 5px;">SALE</span></a>
-                <a href="#" class="text-dark me-3"><i class="bi bi-person"></i></a>
+                <a href="offers.html" class="me-3 position-relative" title="Offers &amp; Deals"
+                    style="color:#e63946;"><i class="bi bi-tag-fill fs-5"></i><span
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        style="font-size:0.55rem; padding:3px 5px;">SALE</span></a>
+                <a href="account.html" class="text-dark me-3"><i class="bi bi-person"></i></a>
+                <a href="wishlist.html" class="me-3 wishlist-icon-nav" title="Wishlist">
+                    <i class="bi bi-heart"></i>
+                    <span class="wishlist-badge" id="wishlist-count">0</span>
+                </a>
                 <a href="cart.html" class="cart-icon">
                     <i class="bi bi-bag"></i>
                     <span class="cart-badge" id="cart-count">0</span>
@@ -70,6 +77,32 @@
                         <h3 class="fw-normal mb-4" id="detail-price">Ksh 0.00</h3>
 
                         <p class="lead text-muted mb-5" id="detail-description">Description goes here.</p>
+
+                        <!-- Shade Selector -->
+                        <div id="shade-selector-container" class="mb-4 d-none">
+                            <div class="d-flex justify-content-between align-items-end mb-2">
+                                <span class="fw-bold">Select Shade</span>
+                                <span class="text-muted small" id="selected-shade-name">Classic Red</span>
+                            </div>
+                            <div class="d-flex gap-2 flex-wrap" id="shade-options">
+                                <button class="shade-option color-swatch selected" style="background-color: #d32f2f;"
+                                    data-name="Classic Red" title="Classic Red"></button>
+                                <button class="shade-option color-swatch" style="background-color: #c2185b;"
+                                    data-name="Berry Plum" title="Berry Plum"></button>
+                                <button class="shade-option color-swatch" style="background-color: #f48fb1;"
+                                    data-name="Soft Pink" title="Soft Pink"></button>
+                                <button class="shade-option color-swatch" style="background-color: #d7ccc8;"
+                                    data-name="Nude Blush" title="Nude Blush"></button>
+                                <button class="shade-option color-swatch" style="background-color: #ffccbc;"
+                                    data-name="Peachy Keen" title="Peachy Keen"></button>
+                                <button class="shade-option color-swatch" style="background-color: #bcaaa4;"
+                                    data-name="Toasted Almond" title="Toasted Almond"></button>
+                                <button class="shade-option color-swatch" style="background-color: #6d4c41;"
+                                    data-name="Deep Cocoa" title="Deep Cocoa"></button>
+                                <button class="shade-option color-swatch" style="background-color: #4e342e;"
+                                    data-name="Espresso" title="Espresso"></button>
+                            </div>
+                        </div>
 
                         <div class="d-flex align-items-center mb-4">
                             <div class="input-group me-3" style="width: 140px;">
@@ -200,7 +233,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('terikiDataLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
             const product = products.find(p => p.id === productId);
@@ -230,6 +263,27 @@
 
             const categoryObj = categories.find(c => c.id === product.category_id);
             if (categoryObj) document.getElementById('detail-category').textContent = categoryObj.name;
+
+            // Shade Selector Logic
+            const shadeContainer = document.getElementById('shade-selector-container');
+            const shadeOptions = document.querySelectorAll('.shade-option');
+            const shadeNameDisplay = document.getElementById('selected-shade-name');
+            let selectedShade = shadeNameDisplay.textContent;
+
+            if (product.category_id === 'tools' || product.category_id === 'nails') {
+                shadeContainer.classList.add('d-none');
+            } else {
+                shadeContainer.classList.remove('d-none');
+            }
+
+            shadeOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    shadeOptions.forEach(opt => opt.classList.remove('selected'));
+                    option.classList.add('selected');
+                    selectedShade = option.dataset.name;
+                    shadeNameDisplay.textContent = selectedShade;
+                });
+            });
 
             // Render Similar Products
             const similarContainer = document.getElementById('similar-products-container');

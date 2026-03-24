@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Teriki Beauty</title>
+    <title>My Wishlist - Teriki Beauty</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,94 +15,11 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <style>
-        .contact-card {
-            border: none;
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.07);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .contact-icon-wrap {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 1.5rem;
-        }
-
-        .whatsapp-icon-wrap {
-            background-color: #e7f8ee;
-            color: #25D366;
-        }
-
-        .email-icon-wrap {
-            background-color: #fff0f3;
-            color: #c96a87;
-        }
-
-        .contact-link {
-            font-size: 1.15rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .contact-link:hover {
-            opacity: 0.75;
-        }
-
-        .whatsapp-link {
-            color: #25D366;
-        }
-
-        .email-link {
-            color: #c96a87;
-        }
-
-        .contact-btn {
-            border-radius: 50px;
-            padding: 0.75rem 2rem;
-            font-weight: 500;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            border: 2px solid #25D366;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1ebe58;
-            border-color: #1ebe58;
-            color: white;
-            transform: scale(1.03);
-        }
-
-        .btn-email {
-            background-color: transparent;
-            color: #c96a87;
-            border: 2px solid #c96a87;
-        }
-
-        .btn-email:hover {
-            background-color: #c96a87;
-            color: white;
-            transform: scale(1.03);
+        .wishlist-hero {
+            background-color: var(--bg-white);
+            padding-top: 140px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
         }
     </style>
 </head>
@@ -132,11 +49,18 @@
                     <li class="nav-item"><a class="nav-link" href="shop.html?category=tools">Tools & Brushes</a></li>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i
-                            class="bi bi-search"></i></a>
-                    <a href="offers.html" class="me-3 position-relative" title="Offers &amp; Deals" style="color:#e63946;"><i class="bi bi-tag-fill fs-5"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size:0.55rem; padding:3px 5px;">SALE</span></a>
+                    <a href="#" class="text-dark me-3" data-bs-toggle="modal" data-bs-target="#searchModal"
+                        title="Search"><i class="bi bi-search"></i></a>
+                    <a href="offers.html" class="me-3 position-relative" title="Offers & Deals" style="color:#e63946;">
+                        <i class="bi bi-tag-fill fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="font-size:0.55rem; padding:3px 5px;">SALE</span>
+                    </a>
                     <a href="account.html" class="text-dark me-3"><i class="bi bi-person"></i></a>
-                    <a href="wishlist.html" class="me-3 wishlist-icon-nav" title="Wishlist"><i class="bi bi-heart"></i><span class="wishlist-badge" id="wishlist-count">0</span></a>
+                    <a href="wishlist.html" class="me-3 wishlist-icon-nav" title="Wishlist">
+                        <i class="bi bi-heart"></i>
+                        <span class="wishlist-badge" id="wishlist-count">0</span>
+                    </a>
                     <a href="cart.html" class="cart-icon">
                         <i class="bi bi-bag"></i>
                         <span class="cart-badge" id="cart-count">0</span>
@@ -146,64 +70,28 @@
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <div class="bg-light" style="padding-top: 140px; padding-bottom: 80px;">
-        <div class="container text-center">
-            <h1 class="font-heading display-4 mb-3">Get In Touch</h1>
-            <p class="text-muted mx-auto lead" style="max-width: 600px;">
-                Have a question about an order, a product, or just want to say hello? We would love to hear from you!
-            </p>
+    <!-- Hero -->
+    <div class="wishlist-hero text-center">
+        <div class="container">
+            <h1 class="font-heading display-4 fw-bold mb-3">My Wishlist</h1>
+            <p class="lead text-muted mx-auto mb-0" style="max-width: 540px;">Your curated collection of Teriki Beauty
+                favourites. Save them for later or add them to your bag now!</p>
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <section class="section-padding">
+    <!-- Wishlist Grid -->
+    <section class="section-padding" style="min-height: 50vh;">
         <div class="container">
-            <div class="row justify-content-center g-4">
-
-                <!-- WhatsApp Card -->
-                <div class="col-md-5">
-                    <div class="contact-card bg-white text-center h-100">
-                        <div class="contact-icon-wrap whatsapp-icon-wrap">
-                            <i class="bi bi-whatsapp"></i>
-                        </div>
-                        <h4 class="font-heading mb-2">Chat on WhatsApp</h4>
-                        <p class="text-muted mb-3">We reply fast! Message us directly for product advice, order help, or
-                            anything else.</p>
-                        <a href="https://wa.me/254112086888" target="_blank"
-                            class="contact-link whatsapp-link d-block mb-4">
-                            +254 0112 086 888
-                        </a>
-                        <a href="https://wa.me/254112086888" target="_blank" class="contact-btn btn-whatsapp">
-                            <i class="bi bi-whatsapp"></i> Message Us on WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Email Card -->
-                <div class="col-md-5">
-                    <div class="contact-card bg-white text-center h-100">
-                        <div class="contact-icon-wrap email-icon-wrap">
-                            <i class="bi bi-envelope-heart"></i>
-                        </div>
-                        <h4 class="font-heading mb-2">Send Us an Email</h4>
-                        <p class="text-muted mb-3">For detailed enquiries, collaborations, or wholesale requests, drop
-                            us a line.</p>
-                        <a href="mailto:jaycijay35@gmail.com" class="contact-link email-link d-block mb-4">
-                            jaycijay35@gmail.com
-                        </a>
-                        <a href="mailto:jaycijay35@gmail.com" class="contact-btn btn-email">
-                            <i class="bi bi-envelope"></i> Send an Email
-                        </a>
-                    </div>
-                </div>
-
+            <div class="row g-4" id="wishlist-grid">
+                <!-- JS injects cards here -->
             </div>
-
-            <!-- Hours note -->
-            <div class="text-center mt-5 pt-3">
-                <p class="text-muted"><i class="bi bi-clock me-2"></i>We typically respond within <strong>2–4
-                        hours</strong> on business days (Mon – Sat, 9am – 6pm EAT).</p>
+            <div id="wishlist-empty" class="text-center py-5 d-none">
+                <div class="mb-4">
+                    <i class="bi bi-heart text-muted" style="font-size: 4rem;"></i>
+                </div>
+                <h3 class="font-heading mb-3">Your wishlist is empty</h3>
+                <p class="text-muted mb-4">You haven't added any products to your wishlist yet.</p>
+                <a href="shop.html" class="btn btn-primary-custom px-4 py-2">Discover Favourites</a>
             </div>
         </div>
     </section>
@@ -228,7 +116,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer mt-0">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6">
@@ -257,7 +145,7 @@
                     <a href="sustainability.html" class="footer-link">Sustainability</a>
                     <a href="contact.html" class="footer-link">Contact</a>
                     <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                    <a href="#" class="footer-link">Terms & Conditions</a>
+                    <a href="terms.html" class="footer-link">Terms & Conditions</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-3">Join the Teriki Family</h5>
@@ -270,9 +158,8 @@
                 </div>
             </div>
             <div class="row mt-5 pt-4 border-top">
-                <div class="col-md-6 text-center text-md-start text-muted">
-                    &copy; 2026 Teriki Beauty. All rights reserved.
-                </div>
+                <div class="col-md-6 text-center text-md-start text-muted">&copy; 2026 Teriki Beauty. All rights
+                    reserved.</div>
                 <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
                     <a href="privacy.html" class="text-muted me-3 text-decoration-none">Privacy Policy</a>
                     <a href="terms.html" class="text-muted text-decoration-none">Terms of Service</a>
@@ -283,6 +170,33 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('terikiDataLoaded', () => {
+            const renderWishlist = () => {
+                const grid = document.getElementById('wishlist-grid');
+                const empty = document.getElementById('wishlist-empty');
+
+                const wishedProducts = products.filter(p => state.wishlist.includes(p.id));
+
+                if (wishedProducts.length === 0) {
+                    grid.innerHTML = '';
+                    empty.classList.remove('d-none');
+                } else {
+                    grid.innerHTML = wishedProducts.map(renderProductCard).join('');
+                    empty.classList.add('d-none');
+                }
+            };
+
+            renderWishlist();
+
+            // Override toggleWishlist slightly to re-render the grid when an item is removed on this page
+            const originalToggle = toggleWishlist;
+            window.toggleWishlist = (productId) => {
+                originalToggle(productId);
+                renderWishlist();
+            };
+        });
+    </script>
 </body>
 
 </html>

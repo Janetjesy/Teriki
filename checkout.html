@@ -38,11 +38,12 @@
                     <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
                         <h3 class="mb-4 font-heading">Secure Checkout</h3>
 
-                        <form id="checkout-form">
+                        <form id="checkout-form" class="needs-validation" novalidate>
                             <!-- Contact Info -->
                             <h5 class="mb-3">Contact Information</h5>
                             <div class="mb-4">
                                 <input type="email" class="form-control p-3" placeholder="Email Address" required>
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
                             </div>
 
                             <!-- Shipping Info -->
@@ -215,7 +216,7 @@
     <!-- App JS -->
     <script src="js/app.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('terikiDataLoaded', () => {
             if (state.cart.length === 0) {
                 window.location.href = 'cart.html';
                 return;
@@ -258,14 +259,22 @@
             document.getElementById('checkout-tax').innerHTML = formatPrice(tax);
             document.getElementById('checkout-total').innerHTML = formatPrice(total);
 
-            document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            const form = document.getElementById('checkout-form');
+            form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                // Clear cart
+
+                if (!form.checkValidity()) {
+                    e.stopPropagation();
+                    form.classList.add('was-validated');
+                    return;
+                }
+
+                // Clear cart on successful checkout
                 localStorage.removeItem('teriki_cart');
                 state.cart = [];
-                // Show modal
-                const modal = new bootstrap.Modal(document.getElementById('successModal'));
-                modal.show();
+
+                // Redirect to Thank You page
+                window.location.href = 'thankyou.html';
             });
         });
     </script>

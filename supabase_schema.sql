@@ -18,6 +18,9 @@ create table public.products (
     price numeric(10, 2) not null check (price >= 0),
     image_url text,
     is_featured boolean default false,
+    top_selling boolean default false,
+    on_offer boolean default false,
+    discount_price numeric(10, 2) check (discount_price >= 0),
     created_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 
@@ -31,10 +34,20 @@ create table public.cart_items (
     unique(user_id, product_id) -- Prevent duplicate rows for the same product in a user's cart
 );
 
+-- 4. Create Wishlist Items Table (For persistent wishlists tied to users)
+create table public.wishlist_items (
+    id uuid default gen_random_uuid() primary key,
+    user_id uuid references auth.users(id) on delete cascade not null,
+    product_id uuid references public.products(id) on delete cascade not null,
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+    unique(user_id, product_id) -- Prevent duplicate rows for the same product in a user's wishlist
+);
+
 -- Enable Row Level Security (RLS)
 alter table public.categories enable row level security;
 alter table public.products enable row level security;
 alter table public.cart_items enable row level security;
+alter table public.wishlist_items enable row level security;
 
 -- Policies for Categories
 create policy "Categories are viewable by everyone" on public.categories
@@ -55,6 +68,16 @@ create policy "Users can update their own cart items" on public.cart_items
     for update using (auth.uid() = user_id);
 
 create policy "Users can delete their own cart items" on public.cart_items
+    for delete using (auth.uid() = user_id);
+
+-- Policies for Wishlist Items (Users can only see and modify their own wishlist)
+create policy "Users can view their own wishlist items" on public.wishlist_items
+    for select using (auth.uid() = user_id);
+
+create policy "Users can insert their own wishlist items" on public.wishlist_items
+    for insert with check (auth.uid() = user_id);
+
+create policy "Users can delete their own wishlist items" on public.wishlist_items
     for delete using (auth.uid() = user_id);
 
 -- Insert Initial Mock Data
